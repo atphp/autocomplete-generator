@@ -3,14 +3,19 @@
 
 use atphp\autocomplete_generator\AutocompleteGenerator;
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+$files = [
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/vendor/autoload.php'
+];
 
-/**
- * Example:
- *
- *  ./bin/autocomplete-generator Gmagick GmagickDraw GmagickPixel
- *
- */
+foreach ($files as $file) {
+    if (file_exists($file)) {
+        require_once $file;
+        break;
+    }
+}
 
 function main()
 {
