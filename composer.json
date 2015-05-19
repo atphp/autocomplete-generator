@@ -3,8 +3,7 @@
   "type": "library",
   "require": {
     "php": ">=5.4.0",
-    "memio/memio": "~1.0",
-    "symfony/console": "~2.6.7"
+    "memio/memio": "~1.0"
   },
   "autoload": {
     "psr-4": {
