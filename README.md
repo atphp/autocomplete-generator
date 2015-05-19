@@ -6,7 +6,7 @@ This a a PHP CLI application to generate PHP code for classes from PHP extension
 
 ```bash
 # Install
-composer global require atphp/autocomplete-generator
+composer global require atphp/autocomplete-generator:~0.1.0
 
 # Add this line to ~/.bash_profile
 export PATH="$HOME/.composer/vendor/bin:$PATH"
