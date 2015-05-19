@@ -1,5 +1,5 @@
 {
-  "name": "ponticlaro/aws-transcoder",
+  "name": "atphp/autocomplete-generator",
   "type": "library",
   "require": {
     "php": ">=5.4.0",
