@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+use atphp\autocomplete_generator\AutocompleteGenerator;
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+/**
+ * Example:
+ *
+ *  ./bin/autocomplete-generator Gmagick GmagickDraw GmagickPixel
+ *
+ */
+
+function main()
+{
+    global $argv;
+
+    foreach ($argv as $arg) {
+        if (class_exists($arg)) {
+            echo (new AutocompleteGenerator())->generate($arg) . "\n\n";
+        }
+    }
+}
+
+main();
