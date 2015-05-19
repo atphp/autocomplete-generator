@@ -1,4 +1,4 @@
-# Autocomplete generator [![Build Status](https://travis-ci.org/atphp/autocomplete-generator.svg)](https://travis-ci.org/atphp/autocomplete-generator)
+# Autocomplete generator [![Build Status](https://travis-ci.org/atphp/autocomplete-generator.svg?branch=v0.1)](https://travis-ci.org/atphp/autocomplete-generator)
 
 This a a PHP CLI application to generate PHP code for classes from PHP extensions.
 
