@@ -2,7 +2,7 @@
 
 This a a PHP CLI application to generate PHP code for classes from PHP extensions.
 
-### Usage:
+### Usage
 
 ```bash
 # Install
