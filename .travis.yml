@@ -1,17 +1,21 @@
 language: php
+
+php:
+    - 5.4
+    - 5.5
+    - 5.6
+    - nightly
+    - hhvm
+    - hhvm-nightly
+
 matrix:
-    include:
-        - 5.4
-        - 5.5
-        - 5.6
-        - nightly
-        - hhvm
-        - hhvm-nightly
     allow_failures:
-        - nightly
+        - php: nightly
         - php: hhvm-nightly
     fast_finish: true
+
 install:
   - composer install
+
 script: phpunit --bootstrap vendor/autoload.php tests/TestAutocompleteGenerator.php
 notifications: { email: false }
