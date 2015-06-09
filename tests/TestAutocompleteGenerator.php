@@ -11,7 +11,7 @@ class TestAutocompleteGenerator extends PHPUnit_Framework_TestCase
         $this->assertContains('class DateTime', $output);
         $this->assertContains('const ATOM = "Y-m-d\TH:i:sP"', $output);
         $this->assertContains('public function setDate', $output);
-        $this->assertContains('public static function createFromFormat($format, $time, $object)', $output);
+        $this->assertContains('public static function createFromFormat($format, $time', $output);
     }
 
 }
