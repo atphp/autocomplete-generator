@@ -72,9 +72,10 @@ class AutocompleteGenerator
         $printer = Build::prettyPrinter();
         $e = new ReflectionExtension($extension);
         $output = [];
-
+        
         foreach ($e->getConstants() as $k => $v) {
-            $output[] = $printer->generateCode(new Constant($k, $v));
+            $constant = new Constant($k, $v);
+            $output[] = $printer->generateCode($constant);
         }
 
         foreach ($e->getFunctions() as $fn) {
@@ -82,7 +83,7 @@ class AutocompleteGenerator
             $function->removeVisibility();
             foreach ($fn->getParameters() as $p) {
                 $type = $p->getType() ? $p->getType()->getName() : null;
-                $function->addArgument(Argument::make($type, $p->getName()));
+                $function->addArgument(new Argument($type ? $type : '', $p->getName()));
             }
 
             $output[] = str_replace(['( $'], ['($'], $printer->generateCode($function));
