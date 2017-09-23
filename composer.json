@@ -2,8 +2,8 @@
   "name": "atphp/autocomplete-generator",
   "type": "library",
   "require": {
-    "php": ">=5.4.0",
-    "memio/memio": "~1.0"
+    "php": ">=7.2.0",
+    "memio/memio": "~2.0"
   },
   "autoload": {
     "psr-4": {

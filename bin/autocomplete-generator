@@ -1,13 +1,15 @@
 #!/usr/bin/env php
 <?php
 
+global $argv;
+
 use atphp\autocomplete_generator\AutocompleteGenerator;
 
 $files = [
     __DIR__ . '/../../../autoload.php',
     __DIR__ . '/../../autoload.php',
     __DIR__ . '/../vendor/autoload.php',
-    __DIR__ . '/vendor/autoload.php'
+    __DIR__ . '/vendor/autoload.php',
 ];
 
 foreach ($files as $file) {
@@ -17,15 +19,14 @@ foreach ($files as $file) {
     }
 }
 
-function main()
-{
-    global $argv;
-
-    foreach ($argv as $arg) {
-        if (class_exists($arg)) {
-            echo (new AutocompleteGenerator())->generate($arg) . "\n\n";
+return call_user_func(
+    function () use ($argv) {
+        foreach ($argv as $arg) {
+            if (false === strpos($arg, '/')) {
+                class_exists($arg)
+                    ? (new AutocompleteGenerator)->generate($arg)
+                    : (new AutocompleteGenerator)->generateExtension($arg);
+            }
         }
     }
-}
-
-main();
+);
